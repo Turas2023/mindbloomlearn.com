@@ -1113,9 +1113,105 @@
 
     .fd-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(340px, .72fr);
-      gap: 48px;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: stretch;
+      position: relative;
+      z-index: 1;
+    }
+
+    .holiday-panel {
+      background: rgba(255,255,255,.88);
+      border: 1px solid rgba(26,111,168,.18);
+      border-radius: 14px;
+      padding: clamp(22px, 3vw, 34px);
+      box-shadow: 0 18px 42px rgba(26,111,168,.12);
+    }
+
+    .holiday-panel.fathers-panel {
+      display: grid;
+      gap: 28px;
+    }
+
+    .holiday-panel.july-panel {
+      background:
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,.5), transparent 20%),
+        linear-gradient(150deg, #fff7f0 0%, #f2f7ff 45%, #edf9ff 100%);
+      border-color: rgba(191, 43, 43, .2);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .holiday-panel.july-panel::before,
+    .holiday-panel.july-panel::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      opacity: .18;
+      pointer-events: none;
+    }
+
+    .holiday-panel.july-panel::before {
+      width: 160px;
+      height: 160px;
+      right: -44px;
+      top: -42px;
+      background: #bf2b2b;
+    }
+
+    .holiday-panel.july-panel::after {
+      width: 120px;
+      height: 120px;
+      left: -34px;
+      bottom: -36px;
+      background: #1a6fa8;
+    }
+
+    .july-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .july-badge {
+      display: inline-flex;
       align-items: center;
+      gap: 8px;
+      background: #bf2b2b;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      padding: 6px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .july-content h2 {
+      color: #102f5f;
+    }
+
+    .july-content p {
+      margin-top: 18px;
+      font-size: 19px;
+      max-width: 560px;
+    }
+
+    .july-coming-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      background: #fff;
+      color: #bf2b2b;
+      border: 1px solid rgba(191, 43, 43, .22);
+      font-weight: 900;
+      box-shadow: 0 12px 28px rgba(191,43,43,.12);
     }
 
     .fd-copy h2 { color: #0d3e61; }
@@ -1194,7 +1290,7 @@
 
     .fd-gallery-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
     }
 
@@ -1236,7 +1332,7 @@
 
     @media (max-width: 680px) {
       .fd-gallery-grid {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 7px;
       }
     }
@@ -1465,56 +1561,66 @@
     <section id="fathers-day" class="fathers-day" aria-labelledby="fd-title">
       <div class="section-inner">
         <div class="fd-layout">
-          <div class="fd-copy">
-            <div class="fd-badge"><span></span>This Sunday · June 21, 2026</div>
-            <h2 id="fd-title">Celebrate Dad with Printable Learning Activities</h2>
-            <p>Show Dad how much he means with heartfelt printables, creative activities, and "All About My Dad" keepsake pages — perfect for little hands to fill in and give as a gift.</p>
-            <div class="fd-actions">
-              <a class="button fd-primary" href="https://www.etsy.com/listing/4524960875/fathers-day-activity-pack-for-kids" target="_blank" rel="noopener">🛒 Buy Now on Etsy</a>
-              <a class="button fd-secondary" href="#contact">Request Custom Pack</a>
+          <article class="holiday-panel fathers-panel" aria-labelledby="fd-title">
+            <div class="fd-copy">
+              <div class="fd-badge"><span></span>This Sunday · June 21, 2026</div>
+              <h2 id="fd-title">Celebrate Dad with Printable Learning Activities</h2>
+              <p>Show Dad how much he means with heartfelt printables, creative activities, and "All About My Dad" keepsake pages — perfect for little hands to fill in and give as a gift.</p>
+              <div class="fd-actions">
+                <a class="button fd-primary" href="https://www.etsy.com/listing/4524960875/fathers-day-activity-pack-for-kids" target="_blank" rel="noopener">🛒 Buy Now on Etsy</a>
+                <a class="button fd-secondary" href="#contact">Request Custom Pack</a>
+              </div>
+              <div class="fd-countdown" id="fd-countdown" aria-label="Countdown to Father's Day">
+                <div class="fd-count-box"><strong id="fd-days">2</strong><span>Days</span></div>
+                <div class="fd-count-box"><strong id="fd-hours">--</strong><span>Hours</span></div>
+                <div class="fd-count-box"><strong id="fd-mins">--</strong><span>Minutes</span></div>
+              </div>
             </div>
-            <div class="fd-countdown" id="fd-countdown" aria-label="Countdown to Father's Day">
-              <div class="fd-count-box"><strong id="fd-days">2</strong><span>Days</span></div>
-              <div class="fd-count-box"><strong id="fd-hours">--</strong><span>Hours</span></div>
-              <div class="fd-count-box"><strong id="fd-mins">--</strong><span>Minutes</span></div>
+            <div class="fd-gallery" aria-label="Father's Day printable previews">
+              <div class="fd-gallery-grid">
+                <a class="fd-thumb" href="#free" aria-label="ColorQuest Father's Day worksheet">
+                  <img src="assets/occasions/fathers-day/ColorQuest_Fathers-Day.png" alt="ColorQuest Father's Day activity">
+                  <span>ColorQuest™</span>
+                </a>
+                <a class="fd-thumb" href="#free" aria-label="ColorQuest Father's Day letter D worksheet">
+                  <img src="assets/occasions/fathers-day/ColorQuest_Fathers-Day-D.png" alt="ColorQuest Father's Day letter D">
+                  <span>ColorQuest™ · D is for Dad</span>
+                </a>
+                <a class="fd-thumb" href="#free" aria-label="STEMQuest Father's Day worksheet">
+                  <img src="assets/occasions/fathers-day/StemQuest_Fathers-Day.png" alt="STEMQuest Father's Day activity">
+                  <span>STEMQuest™</span>
+                </a>
+                <a class="fd-thumb" href="#free" aria-label="Every Mind Colors Father's Day worksheet">
+                  <img src="assets/occasions/fathers-day/EveryMindColors-Fathers-Day.png" alt="Every Mind Colors Father's Day">
+                  <span>Every Mind Colors™</span>
+                </a>
+                <a class="fd-thumb" href="#free" aria-label="CareerQuest Father's Day worksheet">
+                  <img src="assets/occasions/fathers-day/CareerQuest_Fathers-Day-1.png" alt="CareerQuest Father's Day activity 1">
+                  <span>CareerQuest Kids™</span>
+                </a>
+                <a class="fd-thumb" href="#free" aria-label="CareerQuest Father's Day worksheet 2">
+                  <img src="assets/occasions/fathers-day/CareerQuest_Fathers-Day-2.png" alt="CareerQuest Father's Day activity 2">
+                  <span>CareerQuest Kids™</span>
+                </a>
+                <a class="fd-thumb" href="#free" aria-label="Preschool Father's Day worksheet">
+                  <img src="assets/occasions/fathers-day/PreSchool-Fathers-Day.png" alt="Preschool Father's Day activity">
+                  <span>Preschool Learning™</span>
+                </a>
+                <a class="fd-thumb" href="#free" aria-label="Homeschool Resources Father's Day worksheet">
+                  <img src="assets/occasions/fathers-day/HomeSchoolResource-Fathers-Day.png" alt="Homeschool Father's Day activity">
+                  <span>Homeschool Resources™</span>
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="fd-gallery" aria-label="Father's Day printable previews">
-            <div class="fd-gallery-grid">
-              <a class="fd-thumb" href="#free" aria-label="ColorQuest Father's Day worksheet">
-                <img src="assets/occasions/fathers-day/ColorQuest_Fathers-Day.png" alt="ColorQuest Father's Day activity">
-                <span>ColorQuest™</span>
-              </a>
-              <a class="fd-thumb" href="#free" aria-label="ColorQuest Father's Day letter D worksheet">
-                <img src="assets/occasions/fathers-day/ColorQuest_Fathers-Day-D.png" alt="ColorQuest Father's Day letter D">
-                <span>ColorQuest™ · D is for Dad</span>
-              </a>
-              <a class="fd-thumb" href="#free" aria-label="STEMQuest Father's Day worksheet">
-                <img src="assets/occasions/fathers-day/StemQuest_Fathers-Day.png" alt="STEMQuest Father's Day activity">
-                <span>STEMQuest™</span>
-              </a>
-              <a class="fd-thumb" href="#free" aria-label="Every Mind Colors Father's Day worksheet">
-                <img src="assets/occasions/fathers-day/EveryMindColors-Fathers-Day.png" alt="Every Mind Colors Father's Day">
-                <span>Every Mind Colors™</span>
-              </a>
-              <a class="fd-thumb" href="#free" aria-label="CareerQuest Father's Day worksheet">
-                <img src="assets/occasions/fathers-day/CareerQuest_Fathers-Day-1.png" alt="CareerQuest Father's Day activity 1">
-                <span>CareerQuest Kids™</span>
-              </a>
-              <a class="fd-thumb" href="#free" aria-label="CareerQuest Father's Day worksheet 2">
-                <img src="assets/occasions/fathers-day/CareerQuest_Fathers-Day-2.png" alt="CareerQuest Father's Day activity 2">
-                <span>CareerQuest Kids™</span>
-              </a>
-              <a class="fd-thumb" href="#free" aria-label="Preschool Father's Day worksheet">
-                <img src="assets/occasions/fathers-day/PreSchool-Fathers-Day.png" alt="Preschool Father's Day activity">
-                <span>Preschool Learning™</span>
-              </a>
-              <a class="fd-thumb" href="#free" aria-label="Homeschool Resources Father's Day worksheet">
-                <img src="assets/occasions/fathers-day/HomeSchoolResource-Fathers-Day.png" alt="Homeschool Father's Day activity">
-                <span>Homeschool Resources™</span>
-              </a>
+          </article>
+          <article class="holiday-panel july-panel" aria-labelledby="july-title">
+            <div class="july-content">
+              <div class="july-badge">Coming Soon</div>
+              <h2 id="july-title">July 4th Printables Are Almost Here</h2>
+              <p>Get ready for patriotic coloring sheets, star-spangled learning activities, and kid-friendly holiday pages for Independence Day fun.</p>
+              <div class="july-coming-soon">July 4th Coming Soon</div>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
