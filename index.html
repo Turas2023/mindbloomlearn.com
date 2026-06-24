@@ -1187,7 +1187,9 @@
 
     .holiday-panel.july-panel {
       background:
-        radial-gradient(circle at 85% 15%, rgba(255,255,255,.5), transparent 20%),
+        radial-gradient(circle at 86% 12%, rgba(191,43,43,.16) 0 2px, transparent 3px 8px),
+        radial-gradient(circle at 18% 82%, rgba(26,111,168,.16) 0 2px, transparent 3px 8px),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,.62), transparent 20%),
         linear-gradient(150deg, #fff7f0 0%, #f2f7ff 45%, #edf9ff 100%);
       border-color: rgba(191, 43, 43, .2);
       display: flex;
@@ -1207,19 +1209,83 @@
     }
 
     .holiday-panel.july-panel::before {
-      width: 160px;
-      height: 160px;
-      right: -44px;
-      top: -42px;
-      background: #bf2b2b;
+      width: 180px;
+      height: 180px;
+      right: -50px;
+      top: -52px;
+      background:
+        repeating-conic-gradient(from 8deg, rgba(191,43,43,.75) 0 8deg, transparent 8deg 18deg),
+        radial-gradient(circle, #fff 0 9px, transparent 10px);
     }
 
     .holiday-panel.july-panel::after {
-      width: 120px;
-      height: 120px;
-      left: -34px;
-      bottom: -36px;
+      width: 144px;
+      height: 144px;
+      left: -42px;
+      bottom: -44px;
+      background:
+        repeating-conic-gradient(from 0deg, rgba(26,111,168,.7) 0 7deg, transparent 7deg 17deg),
+        radial-gradient(circle, #fff 0 8px, transparent 9px);
+    }
+
+    .july-panel-topper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 9px;
+      background: linear-gradient(90deg, #bf2b2b 0 33.33%, #fff 33.33% 66.66%, #1a6fa8 66.66% 100%);
+      z-index: 1;
+    }
+
+    .july-star {
+      position: absolute;
+      width: 12px;
+      height: 12px;
       background: #1a6fa8;
+      clip-path: polygon(50% 0, 62% 35%, 100% 35%, 69% 57%, 82% 100%, 50% 73%, 18% 100%, 31% 57%, 0 35%, 38% 35%);
+      opacity: .28;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .july-star.one {
+      top: 54px;
+      right: 34px;
+    }
+
+    .july-star.two {
+      bottom: 34px;
+      right: 18%;
+      background: #bf2b2b;
+      transform: scale(1.25) rotate(16deg);
+    }
+
+    .july-star.three {
+      top: 46%;
+      left: 22px;
+      transform: scale(.9) rotate(-18deg);
+    }
+
+    .july-ribbon {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      color: #102f5f;
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .july-ribbon span {
+      display: inline-block;
+      width: 30px;
+      height: 4px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #bf2b2b 0 33.33%, #fff 33.33% 66.66%, #1a6fa8 66.66% 100%);
+      border: 1px solid rgba(26,111,168,.15);
     }
 
     .july-content {
@@ -1580,7 +1646,6 @@
         <div class="hero-copy">
           <p class="eyebrow">Helping Every Mind Bloom</p>
           <div class="brand-lockup">
-            <span class="logo-icon" aria-hidden="true"><img src="assets/logo/mindbloomlearn.png" alt=""></span>
             <h1 id="hero-title">MindBloom Learn™</h1>
           </div>
           <p>Educational printables, STEM activities, career exploration, preschool learning, and inclusive homeschool resources for curious kids and the grown-ups guiding them.</p>
@@ -1667,10 +1732,15 @@
             </div>
           </article>
           <article class="holiday-panel july-panel" aria-labelledby="july-title">
+            <span class="july-panel-topper" aria-hidden="true"></span>
+            <span class="july-star one" aria-hidden="true"></span>
+            <span class="july-star two" aria-hidden="true"></span>
+            <span class="july-star three" aria-hidden="true"></span>
             <div class="july-content">
               <div class="july-badge">July 4th Specials</div>
               <h2 id="july-title">July 4th Printable Bundles Are Here</h2>
               <p>Celebrate freedom, family, and the joy of learning this Independence Day with patriotic STEM challenges and creative coloring activities made for curious kids.</p>
+              <div class="july-ribbon"><span></span> Red, white, blue, and ready to learn</div>
               <div class="fd-actions">
                 <a class="button july-primary" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener">Buy STEMQuest™ on Etsy</a>
                 <a class="button july-secondary" href="https://www.etsy.com/listing/4527135822/colorquest-o-july-4th-activity-sheet-for" target="_blank" rel="noopener">Buy ColorQuest™ on Etsy</a>
