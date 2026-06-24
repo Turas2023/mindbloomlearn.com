@@ -4,10 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MindBloom Learn | Educational Printables, STEM Activities, and Homeschool Resources</title>
-  <meta name="description" content="MindBloom Learn creates educational printables, STEM activities, preschool learning resources, career exploration tools, and inclusive homeschool activities.">
-  <meta name="keywords" content="educational printables, preschool worksheets, STEM activities for kids, homeschool printables, inclusive learning activities, career exploration for kids, Letter A activities">
+  <meta name="description" content="MindBloom Learn creates educational printables, STEM activities, preschool learning resources, career exploration tools, inclusive homeschool activities, and Every Mind Colors cognitive wellness resources for kids, teens, and adults.">
+  <meta name="keywords" content="educational printables, preschool worksheets, STEM activities for kids, homeschool printables, inclusive learning activities, cognitive wellness activities, adult wellness printables, career exploration for kids, Letter A activities">
   <meta property="og:title" content="MindBloom Learn">
-  <meta property="og:description" content="Helping every mind bloom through joyful printables, STEM activities, career exploration, and inclusive learning resources.">
+  <meta property="og:description" content="Helping every mind bloom through joyful printables, STEM activities, career exploration, inclusive learning resources, and Every Mind Colors cognitive wellness activities.">
   <meta property="og:type" content="website">
   <meta name="theme-color" content="#2E8B57">
   <style>
@@ -149,6 +149,61 @@
       background: var(--soft-green);
       color: var(--green);
       outline: none;
+    }
+
+    .nav-group {
+      position: relative;
+    }
+
+    .nav-parent {
+      border: 0;
+      background: transparent;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 800;
+      color: #335248;
+      padding: 10px 11px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .nav-parent::after {
+      content: "▾";
+      font-size: 10px;
+      margin-left: 6px;
+    }
+
+    .nav-parent:hover,
+    .nav-parent:focus-visible {
+      background: var(--soft-green);
+      color: var(--green);
+      outline: none;
+    }
+
+    .nav-submenu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 0;
+      min-width: 220px;
+      display: grid;
+      gap: 4px;
+      padding: 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fffdf7;
+      box-shadow: 0 18px 36px rgba(23,51,42,.14);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-6px);
+      transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+      z-index: 30;
+    }
+
+    .nav-group:hover .nav-submenu,
+    .nav-group:focus-within .nav-submenu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
     .menu-button {
@@ -669,6 +724,69 @@
     .bg-blue { background: var(--soft-blue); }
     .bg-coral { background: var(--soft-coral); }
     .bg-lavender { background: var(--soft-lavender); }
+
+    .wellness-feature {
+      background:
+        radial-gradient(circle at 12% 20%, rgba(142, 71, 173, .12), transparent 28%),
+        radial-gradient(circle at 88% 80%, rgba(77,168,218,.14), transparent 28%),
+        linear-gradient(150deg, #fff9ff 0%, #f7fbff 48%, #fffdf5 100%);
+      border-top: 1px solid rgba(142,71,173,.12);
+      border-bottom: 1px solid rgba(142,71,173,.12);
+    }
+
+    .wellness-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .78fr) minmax(360px, .95fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .wellness-copy h2 {
+      color: #3c145f;
+    }
+
+    .wellness-copy p {
+      margin-top: 18px;
+      font-size: 18px;
+      max-width: 620px;
+    }
+
+    .wellness-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .wellness-list li::before {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #8e47ad;
+      margin-right: 10px;
+    }
+
+    .wellness-preview {
+      display: block;
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(142,71,173,.16);
+      box-shadow: 0 22px 48px rgba(60,20,95,.13);
+      text-decoration: none;
+    }
+
+    .wellness-preview img {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(142,71,173,.16);
+    }
 
     .featured {
       background:
@@ -1520,12 +1638,34 @@
         border-radius: 8px;
       }
 
+      .nav-group,
+      .nav-parent {
+        width: 100%;
+      }
+
+      .nav-parent {
+        text-align: left;
+        padding: 13px 8px;
+      }
+
+      .nav-submenu {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: 0;
+        background: transparent;
+        padding: 0 0 0 12px;
+      }
+
       .hero {
         min-height: auto;
         padding-top: 54px;
       }
 
       .hero-grid,
+      .wellness-grid,
       .free-pack,
       .contact-layout {
         grid-template-columns: 1fr;
@@ -1628,8 +1768,15 @@
       </a>
       <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#fathers-day" class="nav-holiday">Special Occasion</a>
-        <a href="#products">Product Lines</a>
+        <a href="#home">Home</a>
+        <div class="nav-group">
+          <button class="nav-parent" type="button">Product Line</button>
+          <div class="nav-submenu">
+            <a href="#products">Learning Collection</a>
+            <a href="#wellness">Featured Collection</a>
+            <a href="#fathers-day">Holiday Collection</a>
+          </div>
+        </div>
         <a href="#mascots">Mascots</a>
         <a href="#free">Free Printables</a>
         <a href="#about">About</a>
@@ -1648,7 +1795,7 @@
           <div class="brand-lockup">
             <h1 id="hero-title">MindBloom Learn™</h1>
           </div>
-          <p>Educational printables, STEM activities, career exploration, preschool learning, and inclusive homeschool resources for curious kids and the grown-ups guiding them.</p>
+          <p>Educational printables, STEM activities, career exploration, preschool learning, inclusive homeschool resources, and Every Mind Colors™ cognitive wellness activities for curious kids, teens, adults, and the grown-ups guiding them.</p>
           <div class="hero-actions">
             <a class="button primary" href="#free">Get the Free Letter A Pack</a>
             <a class="button secondary" href="#products">Explore Product Lines</a>
@@ -1748,25 +1895,25 @@
             </div>
             <div class="fd-gallery" aria-label="July 4th printable previews">
               <div class="fd-gallery-grid">
-                <a class="fd-thumb" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener" aria-label="STEMQuest July 4th STEM challenge bundle">
-                  <img src="assets/occasions/July4th/StemQuest/StemQuest-Age-09-12-Activity.png" alt="STEMQuest July 4th STEM challenge bundle">
-                  <span>STEMQuest™ · Ages 9-12</span>
-                </a>
                 <a class="fd-thumb" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener" aria-label="STEMQuest July 4th activity for ages 4 to 8">
                   <img src="assets/occasions/July4th/StemQuest/StemQuest-Age-4-8-Activity.png" alt="STEMQuest July 4th activity for ages 4 to 8">
                   <span>STEMQuest™ · Ages 4-8</span>
                 </a>
-                <a class="fd-thumb" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener" aria-label="STEMQuest July 4th activity for teens">
-                  <img src="assets/occasions/July4th/StemQuest/StemQuest-Age-13-19-Activity.png" alt="STEMQuest July 4th activity for ages 13 to 19">
-                  <span>STEMQuest™ · Ages 13-19</span>
-                </a>
-                <a class="fd-thumb" href="https://www.etsy.com/listing/4527135822/colorquest-o-july-4th-activity-sheet-for" target="_blank" rel="noopener" aria-label="ColorQuest July 4th activity sheet bundle">
-                  <img src="assets/occasions/July4th/ColorQuest/ColorQuest_July4th_9-12.png" alt="ColorQuest July 4th activity sheet bundle">
-                  <span>ColorQuest™ · Ages 9-12</span>
-                </a>
                 <a class="fd-thumb" href="https://www.etsy.com/listing/4527135822/colorquest-o-july-4th-activity-sheet-for" target="_blank" rel="noopener" aria-label="ColorQuest July 4th activity for ages 4 to 8">
                   <img src="assets/occasions/July4th/ColorQuest/ColorQuest_July4th_4-8.png" alt="ColorQuest July 4th activity for ages 4 to 8">
                   <span>ColorQuest™ · Ages 4-8</span>
+                </a>
+                <a class="fd-thumb" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener" aria-label="STEMQuest July 4th activity for ages 9 to 12">
+                  <img src="assets/occasions/July4th/StemQuest/StemQuest-Age-09-12-Activity.png" alt="STEMQuest July 4th activity for ages 9 to 12">
+                  <span>STEMQuest™ · Ages 9-12</span>
+                </a>
+                <a class="fd-thumb" href="https://www.etsy.com/listing/4527135822/colorquest-o-july-4th-activity-sheet-for" target="_blank" rel="noopener" aria-label="ColorQuest July 4th activity for ages 9 to 12">
+                  <img src="assets/occasions/July4th/ColorQuest/ColorQuest_July4th_9-12.png" alt="ColorQuest July 4th activity for ages 9 to 12">
+                  <span>ColorQuest™ · Ages 9-12</span>
+                </a>
+                <a class="fd-thumb" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener" aria-label="STEMQuest July 4th activity for teens">
+                  <img src="assets/occasions/July4th/StemQuest/StemQuest-Age-13-19-Activity.png" alt="STEMQuest July 4th activity for ages 13 to 19">
+                  <span>STEMQuest™ · Ages 13-19</span>
                 </a>
                 <a class="fd-thumb" href="https://www.etsy.com/listing/4527135822/colorquest-o-july-4th-activity-sheet-for" target="_blank" rel="noopener" aria-label="ColorQuest July 4th activity for teens">
                   <img src="assets/occasions/July4th/ColorQuest/ColorQuest_July4th_13-19.png" alt="ColorQuest July 4th activity for ages 13 to 19">
@@ -1786,7 +1933,7 @@
             <p class="eyebrow">Product Lines</p>
             <h2 id="products-title">Original learning worlds for every kind of curious mind.</h2>
           </div>
-          <p>Explore playful printable collections for alphabet practice, STEM discovery, inclusive activities, career exploration, preschool skills, and homeschool support.</p>
+          <p>Explore playful printable collections for alphabet practice, STEM discovery, inclusive activities, career exploration, preschool skills, homeschool support, and Every Mind Colors™ wellness resources for all ages.</p>
         </div>
         <div class="product-grid">
           <article class="card product-card">
@@ -1809,8 +1956,8 @@
             <div>
               <img class="product-thumb" src="assets/alphabets/EveryMind_A.png" alt="Every Mind Colors Letter A worksheet preview">
               <h3>Every Mind Colors™</h3>
-              <p>Inclusive learning experiences designed to support different learning styles.</p>
-              <ul><li>Inclusive activities</li><li>Confidence-building pages</li><li>Gentle routines</li></ul>
+              <p>Inclusive learning and cognitive wellness experiences for kids, teens, and adults.</p>
+              <ul><li>Inclusive activities</li><li>Brain fitness pages</li><li>Gentle wellness routines</li></ul>
             </div>
           </article>
           <article class="card product-card">
@@ -1838,6 +1985,27 @@
             </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="wellness" class="wellness-feature" aria-labelledby="wellness-title">
+      <div class="section-inner wellness-grid">
+        <div class="wellness-copy">
+          <p class="eyebrow">Featured Collection</p>
+          <h2 id="wellness-title">Every Mind Colors™ Cognitive Wellness Bundle</h2>
+          <p>A complete brain fitness and wellness activity bundle with memory games, attention training, pattern recognition, gratitude journals, and holiday brain challenges for kids, teens, and adults.</p>
+          <ul class="wellness-list">
+            <li>9 complete collections with 100+ printable pages</li>
+            <li>Brain-boosting activities for focus, creativity, and emotional well-being</li>
+            <li>Great for homeschool, classroom, therapy, self-care, and family learning</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.etsy.com/listing/4527170477/every-mind-colors-cognitive-wellness" target="_blank" rel="noopener">Buy Now on Etsy</a>
+          </div>
+        </div>
+        <a class="wellness-preview" href="https://www.etsy.com/listing/4527170477/every-mind-colors-cognitive-wellness" target="_blank" rel="noopener" aria-label="Buy Every Mind Colors Cognitive Wellness Bundle on Etsy">
+          <img src="assets/collections/every-mind-colors-cognitive-wellness-bundle.png" alt="Every Mind Colors Cognitive Wellness Collection Bundle preview">
+        </a>
       </div>
     </section>
 

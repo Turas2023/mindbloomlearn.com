@@ -1,0 +1,100 @@
+---
+name: mindbloom-marketing-assets
+description: >-
+  Creates MindBloom Learn Etsy covers, Pinterest pins, watermarked preview PDFs,
+  and paid export PDFs from Automation-Pack templates. Use when making Etsy
+  listing images, Pinterest pins, free preview PDFs, watermarked samples, or
+  high-resolution paid PDFs for MindBloom Learn products.
+---
+
+# MindBloom Marketing Assets
+
+## Pack location
+
+```
+/Users/kash/Documents/MiraSolutionsllc/mindbloomlearn.com/Assets/Automation-Pack/MindBloom_Universal_Template_Library/
+```
+
+## Templates
+
+| # | File | Deliverable | Dimensions |
+|---|------|-------------|------------|
+| 03 | `03_Universal_Watermarked_Preview_Template.pdf` / `.png` | Free preview PDF | 2550×3300 |
+| 04 | `04_Universal_Pinterest_Template_1000x1500.pdf` / `.png` | Pinterest pin | 1000×1500 |
+| 05 | `05_Universal_Etsy_Cover_Template_2000x1600.pdf` / `.png` | Etsy listing cover | 2000×1600 |
+
+## Watermark policy
+
+From Brand Reference Pack v2 and README:
+
+| Asset type | Watermark |
+|------------|-----------|
+| Free preview PDF | **Yes** — diagonal `MindBloom Learn Free Preview` (or `MindBloom Learn™ FREE PREVIEW www.mindbloomlearn.com`) |
+| Pinterest pin (free preview promo) | **Yes** — include watermark on free-preview pins |
+| Etsy cover | No watermark on cover image itself |
+| Paid PDF download | **No watermark** |
+
+Watermark spec (`MindBloom_Automation_Asset_Library.pdf`):
+- Diagonal placement
+- 15–20% opacity
+- Footer URL + optional QR on preview PDFs
+
+## Etsy cover (2000×1600)
+
+From `MindBloom_Automation_Asset_Library.pdf`, include:
+- Product title
+- Mascot (visible, on-brand)
+- Brand color accents (Green `#2E7D32`, Orange `#F9A825`)
+- Age range badge
+- Category / product-line badge
+
+Template: `05_Universal_Etsy_Cover_Template_2000x1600.png` as layout base.
+
+Repo example: `assets/occasions/fathers-day/Etsy_Thumbnail_FathersDay.png`
+
+## Pinterest pin (1000×1500)
+
+From spec, include:
+- Strong headline
+- Mascot
+- CTA (e.g. free download, shop link)
+- Watermark when promoting free previews
+
+Template: `04_Universal_Pinterest_Template_1000x1500.png`
+
+## Preview PDF workflow
+
+1. Start from worksheet output (see `mindbloom-worksheet-templates`).
+2. Use first 2–3 pages only for lead-gen previews (per brand v2 automation workflow).
+3. Apply diagonal watermark at 15–20% opacity via template `03`.
+4. Export at 150 DPI for web preview; keep paid PDF at 300 DPI.
+
+```
+Preview PDF:  150 DPI, watermarked, pages 1–3
+Paid PDF:     300 DPI, no watermark, full document, copyright footer, page numbers
+```
+
+Paid PDF requirements (`MindBloom_Automation_Asset_Library.pdf`):
+- No watermark
+- High resolution (300 DPI)
+- Copyright footer on every page
+- Metadata and page numbering
+
+## Generation checklist
+
+```
+- [ ] Confirm asset type (preview vs paid vs marketing image)
+- [ ] Apply or omit watermark per policy above
+- [ ] Place logo from assets/logo/mindbloomlearn.png
+- [ ] Use correct mascot from assets/mascots/ or Automation-Pack lineup
+- [ ] Etsy: 2000×1600; Pinterest: 1000×1500
+- [ ] Verify brand colors and typography (Baloo 2 / Poppins / Nunito)
+```
+
+## Output naming (repo convention)
+
+```
+Etsy_Thumbnail_{Occasion}.png
+{ProductLine}_{Occasion}_{age-range}.png   # Pinterest or preview image
+{ProductLine}_{Occasion}_{age-range}.pdf   # preview or paid PDF
+```

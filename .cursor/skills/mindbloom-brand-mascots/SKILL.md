@@ -1,0 +1,111 @@
+---
+name: mindbloom-brand-mascots
+description: >-
+  Applies MindBloom Learn brand standards and official mascot assets from the
+  Automation-Pack brand reference PDFs and transparent mascot lineup. Use when
+  compositing mascots, checking brand consistency, choosing colors/typography,
+  validating poses, or referencing official mascot PNGs for asset generation.
+---
+
+# MindBloom Brand & Mascots
+
+## Pack location
+
+```
+/Users/kash/Documents/MiraSolutionsllc/mindbloomlearn.com/Assets/Automation-Pack/
+```
+
+| Asset | Path |
+|-------|------|
+| Brand reference (prefer v2) | `MindBloom_Learn_Brand_Reference_Pack_v2.pdf` |
+| Brand colors (hex detail) | `MindBloom_Learn_Brand_Reference_Pack_v1.pdf` |
+| Automation spec | `MindBloom_Automation_Asset_Library.pdf` |
+| Mascot lineup (group) | `Transparent_Lineup_Mascots.png` |
+| Individual transparent mascots | `Mascot_image/Transparent_Lineup_Mascot_{Questy\|Nova\|Riley\|DrKai\|Bloom\|Hugo}.png` |
+| Mascot archive | `Mascot_image.zip` |
+
+## Repo canonical sources (prefer when in GitHub workspace)
+
+- Logo: `assets/logo/mindbloomlearn.png`
+- Mascots: `assets/mascots/Mindbloomlearn_{Questy|Nova|Riley|DrKai|Bloom|Hugo}.png`
+- Group: `assets/mascots/mindbloomlearn-mascots.png`
+- Character stories/colors: `index.html` ? `mascotStories`
+- Cursor rules: `.cursor/rules/brand-logo.mdc`, `.cursor/rules/mascot-assets.mdc`
+
+Use Automation-Pack transparent lineup when compositing marketing images or when repo mascots lack a needed pose variant.
+
+## Brand text
+
+| Item | Value |
+|------|-------|
+| Brand name | MindBloom Learn™ |
+| Tagline | Helping Every Mind Bloom™ |
+| Company | Mira Solutions LLC |
+| Website | www.mindbloomlearn.com |
+
+## Official colors
+
+| Name | Hex |
+|------|-----|
+| MindBloom Green | `#2E7D32` |
+| MindBloom Orange | `#F9A825` |
+| Background White | `#FFFFFF` |
+
+Mascot accent palettes: see v1 brand pack for per-character hex values.
+
+## Mascot standards (do not deviate)
+
+| Mascot | Product line | Key traits |
+|--------|--------------|------------|
+| Questy™ | ColorQuest™ | No glasses; chameleon tail; paint palette/brush; backpack |
+| Nova™ | STEMQuest™ | Brown ponytail; blue STEM goggles; lab coat; light bulb |
+| Riley™ | Every Mind Colors™ | Rainbow headband; purple shirt; rainbow heart logo |
+| Dr. Kai™ | CareerQuest Kids™ | Round glasses; lab coat; clipboard; orange tie |
+| Bloom™ | Preschool Learning™ | Blue elephant; green overalls; flower logo; purple book — never pink or gray |
+| Hugo™ | Homeschool Resources™ | Owl; graduation cap; green book; gold body |
+
+## Approved poses
+
+From brand packs: **Front Facing**, **Waving**, **Teaching**, **Holding Signature Object**.
+
+Automation-Pack also lists variants: front, wave, teaching, holding-object.
+
+## Prohibited
+
+Angry, sad, crying, aggressive, scary poses; anime redesigns; plush substitutions; species changes; glasses on Questy; pink/gray Bloom.
+
+## Typography
+
+| Role | Font |
+|------|------|
+| Headings | Baloo 2 (preferred); Poppins Extra Bold (fallback) |
+| Subheadings | Poppins SemiBold |
+| Body | Nunito |
+
+## Logo rules
+
+- Use flower logo + "MindBloom Learn" wordmark together in visual lockups.
+- Minimum clear space: 1 flower width around logo.
+- Never stretch, rotate, recolor, remove flower, add shadows, or use low-res assets.
+- `object-fit: contain` — keep full flower + lightbulb visible.
+
+## AI generation rules
+
+From brand packs:
+- Use official mascot reference PNGs as visual input.
+- Never redesign mascots.
+- Maintain approved colors and proportions.
+- Occasion-themed accessories allowed only for holiday/occasion assets (see `mascot-assets.mdc`).
+
+## Brand consistency checklist
+
+Before shipping any asset:
+
+```
+- [ ] Colors match official palette
+- [ ] Mascot appearance matches standards (no prohibited traits)
+- [ ] Logo used correctly with clear space
+- [ ] Typography: Baloo 2 / Poppins / Nunito
+- [ ] Watermark on free previews only; paid assets clean
+- [ ] Footer: © [YEAR] MindBloom Learn™ | A Mira Solutions LLC Brand | www.mindbloomlearn.com
+```
