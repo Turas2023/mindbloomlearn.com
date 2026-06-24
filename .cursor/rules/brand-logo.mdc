@@ -1,0 +1,41 @@
+---
+description: MindBloom Learn logo asset usage and accurate flower representation
+alwaysApply: true
+---
+
+# MindBloom Brand Logo
+
+## Canonical logo asset
+
+Always use the official logo file:
+
+`assets/logo/mindbloomlearn.png`
+
+Do not redraw, approximate, or substitute a generic flower, brain, or plant icon for the brand mark.
+
+## Logo anatomy (must stay accurate)
+
+The MindBloom flower mark is:
+
+- Gold/orange **lightbulb outline** (open at top)
+- **Green stem and leaves** inside the bulb
+- **Rainbow lotus bloom** emerging from the top (purple, pink, orange, yellow, cyan petals)
+- **Colored dots** radiating above the flower (purple, orange, pink, green, light blue)
+- Wordmark in asset: **MindBloom** (green) + **Learning** (gold)
+
+When the site or product copy uses **MindBloom Learn™**, pair the accurate flower mark from the logo asset with that text — never replace the flower with a different illustration.
+
+## Usage rules
+
+1. **Prefer the asset file** — embed `assets/logo/mindbloomlearn.png` in headers, footers, worksheets, Etsy covers, Pinterest pins, and PDFs.
+2. **Never crop the flower incorrectly** — use `object-fit: contain` (or a left-aligned icon crop that keeps the full flower + lightbulb visible). Do not use `object-fit: cover` in a square that cuts off petals or the bulb.
+3. **Brand lockups** — wherever the brand name appears visually (not plain body copy), include the logo flower mark beside or above the name.
+4. **Generated assets** — when creating new printables or marketing images, copy/place the logo PNG; do not generate a new flower from scratch.
+5. **Worksheets** — follow existing footer/header patterns in `assets/alphabets/` and `assets/occasions/` that already use the MindBloom Learn logo with the correct flower.
+
+## Brand text
+
+- Public brand name: **MindBloom Learn™**
+- Tagline: **Helping Every Mind Bloom**
+- Company: **Mira Solutions LLC**
+- Website: **www.mindbloomlearn.com**

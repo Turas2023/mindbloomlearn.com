@@ -79,29 +79,52 @@
       white-space: nowrap;
     }
 
-    .brand-mark {
-      width: 48px;
-      height: 48px;
-      border-radius: 8px;
-      object-fit: cover;
-      box-shadow: 0 8px 20px rgba(46, 139, 87, .18);
-      border: 1px solid rgba(46, 139, 87, .14);
-      background: #fff;
+    .brand-logo {
+      height: 44px;
+      width: auto;
+      object-fit: contain;
+      object-position: left center;
+      display: block;
     }
 
-    .brand small {
+    .brand-sub {
       display: block;
       font-size: 11px;
       font-weight: 800;
       color: var(--green);
       line-height: 1;
+      margin-top: 2px;
     }
 
-    .brand span {
+    .logo-icon {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      overflow: hidden;
+      flex-shrink: 0;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 8px 20px rgba(46, 139, 87, .18);
+      border: 1px solid rgba(46, 139, 87, .14);
+    }
+
+    .logo-icon img {
+      height: 100%;
+      width: auto;
+      max-width: none;
       display: block;
-      font-family: "Poppins", ui-sans-serif, system-ui, sans-serif;
-      font-size: 20px;
-      line-height: 1;
+      object-fit: cover;
+      object-position: left center;
+    }
+
+    .brand-lockup {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-lockup h1 {
+      margin: 0;
     }
 
     .nav-links {
@@ -990,6 +1013,19 @@
       text-decoration: none;
     }
 
+    .contact-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .contact-brand .logo-icon {
+      width: 2rem;
+      height: 2rem;
+      box-shadow: none;
+    }
+
     .legal {
       background: #fff;
       border-top: 1px solid var(--line);
@@ -1027,6 +1063,22 @@
     .footer-inner p {
       color: rgba(255,255,255,.78);
       font-size: 14px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .footer-logo {
+      height: 40px;
+      width: auto;
+      object-fit: contain;
+      object-position: left center;
+      background: rgba(255, 255, 255, .95);
+      border-radius: 8px;
+      padding: 4px 8px;
     }
 
     .toast {
@@ -1140,7 +1192,7 @@
       border-color: rgba(191, 43, 43, .2);
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       overflow: hidden;
       position: relative;
     }
@@ -1200,18 +1252,16 @@
       max-width: 560px;
     }
 
-    .july-coming-soon {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-top: 28px;
-      padding: 13px 18px;
-      border-radius: 999px;
+    .button.july-primary {
+      background: #bf2b2b;
+      color: #fff;
+      box-shadow: 0 14px 28px rgba(191,43,43,.24);
+    }
+
+    .button.july-secondary {
       background: #fff;
-      color: #bf2b2b;
-      border: 1px solid rgba(191, 43, 43, .22);
-      font-weight: 900;
-      box-shadow: 0 12px 28px rgba(191,43,43,.12);
+      color: #1a6fa8;
+      border-color: rgba(26,111,168,.28);
     }
 
     .fd-copy h2 { color: #0d3e61; }
@@ -1507,12 +1557,12 @@
   <header class="site-header">
     <div class="nav-shell">
       <a class="brand" href="#home" aria-label="MindBloom Learn home">
-        <img class="brand-mark" src="assets/logo/mindbloomlearn.png" alt="">
-        <span><small>A Mira Solutions LLC Brand</small>MindBloom Learn™</span>
+        <img class="brand-logo" src="assets/logo/mindbloomlearn.png" alt="MindBloom Learn logo">
+        <span class="brand-sub">A Mira Solutions LLC Brand</span>
       </a>
       <button class="menu-button" type="button" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
       <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#fathers-day" class="nav-holiday">Father's Day 🎁</a>
+        <a href="#fathers-day" class="nav-holiday">Special Occasion</a>
         <a href="#products">Product Lines</a>
         <a href="#mascots">Mascots</a>
         <a href="#free">Free Printables</a>
@@ -1529,7 +1579,10 @@
       <div class="hero-grid">
         <div class="hero-copy">
           <p class="eyebrow">Helping Every Mind Bloom</p>
-          <h1 id="hero-title">MindBloom Learn™</h1>
+          <div class="brand-lockup">
+            <span class="logo-icon" aria-hidden="true"><img src="assets/logo/mindbloomlearn.png" alt=""></span>
+            <h1 id="hero-title">MindBloom Learn™</h1>
+          </div>
           <p>Educational printables, STEM activities, career exploration, preschool learning, and inclusive homeschool resources for curious kids and the grown-ups guiding them.</p>
           <div class="hero-actions">
             <a class="button primary" href="#free">Get the Free Letter A Pack</a>
@@ -1615,10 +1668,41 @@
           </article>
           <article class="holiday-panel july-panel" aria-labelledby="july-title">
             <div class="july-content">
-              <div class="july-badge">Coming Soon</div>
-              <h2 id="july-title">July 4th Printables Are Almost Here</h2>
-              <p>Get ready for patriotic coloring sheets, star-spangled learning activities, and kid-friendly holiday pages for Independence Day fun.</p>
-              <div class="july-coming-soon">July 4th Coming Soon</div>
+              <div class="july-badge">July 4th Specials</div>
+              <h2 id="july-title">July 4th Printable Bundles Are Here</h2>
+              <p>Celebrate freedom, family, and the joy of learning this Independence Day with patriotic STEM challenges and creative coloring activities made for curious kids.</p>
+              <div class="fd-actions">
+                <a class="button july-primary" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener">Buy STEMQuest™ on Etsy</a>
+                <a class="button july-secondary" href="https://www.etsy.com/listing/4527135822/colorquest-o-july-4th-activity-sheet-for" target="_blank" rel="noopener">Buy ColorQuest™ on Etsy</a>
+              </div>
+            </div>
+            <div class="fd-gallery" aria-label="July 4th printable previews">
+              <div class="fd-gallery-grid">
+                <a class="fd-thumb" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener" aria-label="STEMQuest July 4th STEM challenge bundle">
+                  <img src="assets/occasions/July4th/StemQuest/StemQuest-Age-09-12-Activity.png" alt="STEMQuest July 4th STEM challenge bundle">
+                  <span>STEMQuest™ · Ages 9-12</span>
+                </a>
+                <a class="fd-thumb" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener" aria-label="STEMQuest July 4th activity for ages 4 to 8">
+                  <img src="assets/occasions/July4th/StemQuest/StemQuest-Age-4-8-Activity.png" alt="STEMQuest July 4th activity for ages 4 to 8">
+                  <span>STEMQuest™ · Ages 4-8</span>
+                </a>
+                <a class="fd-thumb" href="https://www.etsy.com/listing/4527141912/stemquest-o-july-4th-stem-challenge" target="_blank" rel="noopener" aria-label="STEMQuest July 4th activity for teens">
+                  <img src="assets/occasions/July4th/StemQuest/StemQuest-Age-13-19-Activity.png" alt="STEMQuest July 4th activity for ages 13 to 19">
+                  <span>STEMQuest™ · Ages 13-19</span>
+                </a>
+                <a class="fd-thumb" href="https://www.etsy.com/listing/4527135822/colorquest-o-july-4th-activity-sheet-for" target="_blank" rel="noopener" aria-label="ColorQuest July 4th activity sheet bundle">
+                  <img src="assets/occasions/July4th/ColorQuest/ColorQuest_July4th_9-12.png" alt="ColorQuest July 4th activity sheet bundle">
+                  <span>ColorQuest™ · Ages 9-12</span>
+                </a>
+                <a class="fd-thumb" href="https://www.etsy.com/listing/4527135822/colorquest-o-july-4th-activity-sheet-for" target="_blank" rel="noopener" aria-label="ColorQuest July 4th activity for ages 4 to 8">
+                  <img src="assets/occasions/July4th/ColorQuest/ColorQuest_July4th_4-8.png" alt="ColorQuest July 4th activity for ages 4 to 8">
+                  <span>ColorQuest™ · Ages 4-8</span>
+                </a>
+                <a class="fd-thumb" href="https://www.etsy.com/listing/4527135822/colorquest-o-july-4th-activity-sheet-for" target="_blank" rel="noopener" aria-label="ColorQuest July 4th activity for teens">
+                  <img src="assets/occasions/July4th/ColorQuest/ColorQuest_July4th_13-19.png" alt="ColorQuest July 4th activity for ages 13 to 19">
+                  <span>ColorQuest™ · Ages 13-19</span>
+                </a>
+              </div>
             </div>
           </article>
         </div>
@@ -1783,7 +1867,7 @@
           <p style="margin-top:18px;font-size:18px;">Have a question about MindBloom Learn resources, printable packs, or educational activities? Send a message and we will be glad to help.</p>
           <ul class="contact-list">
             <li>Website: <a href="https://www.mindbloomlearn.com">www.mindbloomlearn.com</a></li>
-            <li>Brand: MindBloom Learn™</li>
+            <li class="contact-brand">Brand: <span class="logo-icon" aria-hidden="true"><img src="assets/logo/mindbloomlearn.png" alt=""></span> MindBloom Learn™</li>
             <li>Company: Mira Solutions LLC</li>
           </ul>
         </div>
@@ -1826,8 +1910,13 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      <p>© 2026 MindBloom Learn™. All Rights Reserved.</p>
-      <p>A Mira Solutions LLC Brand · www.mindbloomlearn.com</p>
+      <div class="footer-brand">
+        <img class="footer-logo" src="assets/logo/mindbloomlearn.png" alt="MindBloom Learn logo">
+        <div>
+          <p>© 2026 MindBloom Learn™. All Rights Reserved.</p>
+          <p>A Mira Solutions LLC Brand · www.mindbloomlearn.com</p>
+        </div>
+      </div>
     </div>
   </footer>
 

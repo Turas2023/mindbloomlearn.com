@@ -1,0 +1,41 @@
+---
+description: Mascot asset source and occasion color guidelines for MindBloom Learn
+alwaysApply: true
+---
+
+# MindBloom Mascot Assets
+
+## Canonical source
+
+All mascot information and default character art lives in:
+
+`/Users/kash/Documents/GitHub/mindbloomlearn.com/assets/mascots/`
+
+- Individual sheets: `Mindbloomlearn_{Questy|Nova|Riley|DrKai|Bloom|Hugo}.png`
+- Group shot: `mindbloomlearn-mascots.png`
+- Stories, quotes, worlds, accent colors: `index.html` → `mascotStories`
+
+Refer to all existing assets under `assets/` for layout, branding, and worksheet patterns.
+
+Logo: always use `assets/logo/mindbloomlearn.png`; see `.cursor/rules/brand-logo.mdc`.
+
+## Default appearance (non-occasion)
+
+When generating general worksheets, marketing, or product assets **without** an occasion theme, mascots must match the canonical mascot folder images:
+
+- Same character design, proportions, clothing, and base colors
+- Same product-line association (Questy → ColorQuest™, Nova → STEMQuest™, etc.)
+- Do not invent new outfits, species changes, or palette swaps outside occasion work
+
+## Occasion-themed appearance
+
+For **occasion/holiday** assets (e.g. Father's Day under `assets/occasions/`), mascots **may** use colors and accessories related to that occasion:
+
+- Occasion-appropriate hats, props, or accent colors are allowed
+- Character identity must remain recognizable as the same mascot
+- When the occasion theme is not present, revert to the default mascot folder look
+
+## Examples
+
+- **Default:** Questy = green chameleon, CQ shirt, yellow backpack (`Mindbloomlearn_Questy.png`)
+- **Occasion:** Questy on Father's Day sheets may wear a safari hat and use occasion-themed spot colors while still clearly being Questy
