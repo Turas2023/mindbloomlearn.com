@@ -28,10 +28,19 @@ jobs:
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
+      - name: Prepare static site
+        run: |
+          mkdir -p _site/assets
+          cp index.html CNAME .nojekyll _site/
+          rsync -a \
+            --exclude ".DS_Store" \
+            --exclude "automation-pack" \
+            assets/ _site/assets/
+
       - name: Upload site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - name: Deploy to GitHub Pages
         id: deployment
