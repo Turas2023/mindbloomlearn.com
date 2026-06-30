@@ -768,6 +768,90 @@
       background: #fff;
     }
 
+    .tamil-feature {
+      background:
+        radial-gradient(circle at 16% 20%, rgba(142,71,173,.12), transparent 28%),
+        radial-gradient(circle at 84% 76%, rgba(46,139,87,.12), transparent 28%),
+        linear-gradient(150deg, #fff9ff 0%, #f8fff9 50%, #fff8ed 100%);
+      border-top: 1px solid rgba(142,71,173,.12);
+      border-bottom: 1px solid rgba(46,139,87,.12);
+    }
+
+    .tamil-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .72fr) minmax(360px, .95fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .tamil-copy h2 {
+      color: #4b1680;
+    }
+
+    .tamil-copy p {
+      margin-top: 18px;
+      font-size: 18px;
+      max-width: 620px;
+    }
+
+    .tamil-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-weight: 800;
+    }
+
+    .tamil-list li::before {
+      content: "";
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: #8e47ad;
+      margin-right: 10px;
+    }
+
+    .tamil-preview-card {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.82);
+      border: 1px solid rgba(142,71,173,.16);
+      box-shadow: 0 22px 48px rgba(60,20,95,.13);
+    }
+
+    .tamil-cover {
+      display: block;
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid rgba(142,71,173,.16);
+    }
+
+    .tamil-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .tamil-thumb {
+      display: block;
+      overflow: hidden;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .tamil-thumb img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+    }
+
     .bg-green { background: var(--soft-green); }
     .bg-gold { background: var(--soft-gold); }
     .bg-blue { background: var(--soft-blue); }
@@ -1719,6 +1803,7 @@
 
       .hero-grid,
       .wellness-grid,
+      .tamil-grid,
       .free-pack,
       .contact-layout {
         grid-template-columns: 1fr;
@@ -1736,6 +1821,10 @@
 
       .learning-language-grid {
         grid-template-columns: 1fr;
+      }
+
+      .tamil-preview-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .pin-grid {
@@ -1836,7 +1925,7 @@
           <div class="nav-submenu">
             <span class="nav-submenu-label">Learning Collection</span>
             <a class="nav-child" href="#learning-english">English</a>
-            <a class="nav-child" href="#learning-tamil">Tamil</a>
+            <a class="nav-child" href="#tamil">Tamil</a>
             <a href="#wellness">Featured Collection</a>
             <a href="#fathers-day">Holiday Collection</a>
           </div>
@@ -2013,6 +2102,9 @@
               <p class="eyebrow">Learning Collection</p>
               <h3>Tamil</h3>
               <p>Tamil alphabet tracing, writing, letter finding, and vocabulary activities for language practice.</p>
+              <div class="hero-actions">
+                <a class="button secondary" href="#tamil">Explore Tamil</a>
+              </div>
             </div>
             <img src="assets/alphabets/Tamil/1/Tamil_1_Page_1_1_Color_and_Trace.png" alt="Tamil alphabet worksheet preview">
           </article>
@@ -2066,6 +2158,42 @@
               <ul><li>Homeschool printables</li><li>Planning pages</li><li>Weekly learning kits</li></ul>
             </div>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="tamil" class="tamil-feature" aria-labelledby="tamil-title">
+      <div class="section-inner tamil-grid">
+        <div class="tamil-copy">
+          <p class="eyebrow">Tamil Learning Collection</p>
+          <h2 id="tamil-title">ColorQuest™ Tamil Adventures</h2>
+          <p>Introduce Tamil vowels through playful coloring, tracing, letter-finding, vocabulary, and creative worksheet activities made for preschool and early learners.</p>
+          <ul class="tamil-list">
+            <li>First set of 12 Tamil vowel letters</li>
+            <li>Coloring, tracing, writing, find-the-letter, and vocabulary pages</li>
+            <li>Designed for ages 3-6, home practice, preschool, and classrooms</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="button primary" href="https://www.etsy.com/listing/4530202154/tamil-alphabet-worksheets-o-preschool" target="_blank" rel="noopener">Buy Now on Etsy</a>
+            <a class="button secondary" href="https://www.etsy.com/listing/4530202154/tamil-alphabet-worksheets-o-preschool" target="_blank" rel="noopener">Buy it on Etsy</a>
+          </div>
+        </div>
+        <div class="tamil-preview-card">
+          <img class="tamil-cover" src="assets/alphabets/Tamil/Tamil_Front_Page.png" alt="ColorQuest Tamil Adventures Tamil vowels bundle cover">
+          <div class="tamil-preview-grid" aria-label="Tamil worksheet previews">
+            <a class="tamil-thumb" href="https://www.etsy.com/listing/4530202154/tamil-alphabet-worksheets-o-preschool" target="_blank" rel="noopener" aria-label="Tamil color and trace worksheet preview">
+              <img src="assets/alphabets/Tamil/1/Tamil_1_Page_1_1_Color_and_Trace.png" alt="Tamil color and trace worksheet">
+            </a>
+            <a class="tamil-thumb" href="https://www.etsy.com/listing/4530202154/tamil-alphabet-worksheets-o-preschool" target="_blank" rel="noopener" aria-label="Tamil trace and write worksheet preview">
+              <img src="assets/alphabets/Tamil/1/Tamil_1_Page_1_2_Trace_and_Write.png" alt="Tamil trace and write worksheet">
+            </a>
+            <a class="tamil-thumb" href="https://www.etsy.com/listing/4530202154/tamil-alphabet-worksheets-o-preschool" target="_blank" rel="noopener" aria-label="Tamil find the letter worksheet preview">
+              <img src="assets/alphabets/Tamil/1/Tamil_1_Page_1_3_Find_the_Letter.png" alt="Tamil find the letter worksheet">
+            </a>
+            <a class="tamil-thumb" href="https://www.etsy.com/listing/4530202154/tamil-alphabet-worksheets-o-preschool" target="_blank" rel="noopener" aria-label="Tamil vocabulary worksheet preview">
+              <img src="assets/alphabets/Tamil/1/Tamil_1_Page_1_4_Vocabulary.png" alt="Tamil vocabulary worksheet">
+            </a>
+          </div>
         </div>
       </div>
     </section>
