@@ -199,6 +199,22 @@
       z-index: 30;
     }
 
+    .nav-submenu-label {
+      display: block;
+      padding: 8px 11px 4px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .nav-links .nav-child {
+      margin-left: 12px;
+      padding-left: 14px;
+      border-left: 2px solid var(--soft-green);
+    }
+
     .nav-group:hover .nav-submenu,
     .nav-group:focus-within .nav-submenu {
       opacity: 1;
@@ -717,6 +733,39 @@
       border-radius: 50%;
       background: var(--green);
       margin-right: 9px;
+    }
+
+    .learning-language-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin: 0 0 26px;
+    }
+
+    .language-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 132px;
+      gap: 20px;
+      align-items: center;
+      padding: 22px;
+    }
+
+    .language-card h3 {
+      margin: 4px 0 10px;
+    }
+
+    .language-card p {
+      color: var(--muted);
+    }
+
+    .language-card img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      object-fit: cover;
+      object-position: top center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
     }
 
     .bg-green { background: var(--soft-green); }
@@ -1659,6 +1708,10 @@
         padding: 0 0 0 12px;
       }
 
+      .nav-submenu-label {
+        padding-left: 8px;
+      }
+
       .hero {
         min-height: auto;
         padding-top: 54px;
@@ -1679,6 +1732,10 @@
       .mascot-grid,
       .audience-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .learning-language-grid {
+        grid-template-columns: 1fr;
       }
 
       .pin-grid {
@@ -1724,9 +1781,14 @@
       .product-grid,
       .mascot-grid,
       .audience-grid,
+      .learning-language-grid,
       .pin-grid,
       .legal-grid {
         grid-template-columns: 1fr;
+      }
+
+      .language-card {
+        grid-template-columns: minmax(0, 1fr) 104px;
       }
 
       .hero-visual {
@@ -1772,7 +1834,9 @@
         <div class="nav-group">
           <button class="nav-parent" type="button">Product Line</button>
           <div class="nav-submenu">
-            <a href="#products">Learning Collection</a>
+            <span class="nav-submenu-label">Learning Collection</span>
+            <a class="nav-child" href="#learning-english">English</a>
+            <a class="nav-child" href="#learning-tamil">Tamil</a>
             <a href="#wellness">Featured Collection</a>
             <a href="#fathers-day">Holiday Collection</a>
           </div>
@@ -1809,7 +1873,7 @@
         <div class="hero-visual" aria-label="MindBloom Learn logo, mascot art, and alphabet worksheet preview">
           <img class="hero-logo" src="assets/logo/mindbloomlearn.png" alt="MindBloom Learn logo">
           <img class="hero-mascots" src="assets/mascots/mindbloomlearn-mascots.png" alt="MindBloom Learn mascot collection">
-          <img class="hero-alpha" src="assets/alphabets/Alphabet-A.png" alt="Letter A learning worksheet preview">
+          <img class="hero-alpha" src="assets/alphabets/English/A/Alphabet-A.png" alt="Letter A learning worksheet preview">
           <div class="sun" aria-hidden="true"></div>
           <div class="plant" aria-hidden="true"><span class="leaf"></span><span class="leaf two"></span></div>
           <div class="table" aria-hidden="true"></div>
@@ -1935,10 +1999,28 @@
           </div>
           <p>Explore playful printable collections for alphabet practice, STEM discovery, inclusive activities, career exploration, preschool skills, homeschool support, and Every Mind Colors™ wellness resources for all ages.</p>
         </div>
+        <div class="learning-language-grid" aria-label="Learning Collection language navigation">
+          <article id="learning-english" class="card language-card">
+            <div>
+              <p class="eyebrow">Learning Collection</p>
+              <h3>English</h3>
+              <p>Alphabet, coloring, STEM, preschool, career, and homeschool resources built around English letters and early literacy.</p>
+            </div>
+            <img src="assets/alphabets/English/A/Alphabet-A.png" alt="English alphabet Letter A worksheet preview">
+          </article>
+          <article id="learning-tamil" class="card language-card">
+            <div>
+              <p class="eyebrow">Learning Collection</p>
+              <h3>Tamil</h3>
+              <p>Tamil alphabet tracing, writing, letter finding, and vocabulary activities for language practice.</p>
+            </div>
+            <img src="assets/alphabets/Tamil/1/Tamil_1_Page_1_1_Color_and_Trace.png" alt="Tamil alphabet worksheet preview">
+          </article>
+        </div>
         <div class="product-grid">
           <article class="card product-card">
             <div>
-              <img class="product-thumb" src="assets/alphabets/ColorQuest_A.png" alt="ColorQuest Letter A worksheet preview">
+              <img class="product-thumb" src="assets/alphabets/English/A/ColorQuest_A.png" alt="ColorQuest Letter A worksheet preview">
               <h3>ColorQuest™</h3>
               <p>Alphabet activities, tracing pages, and colorful worksheet adventures.</p>
               <ul><li>Letter A activities</li><li>Preschool worksheets</li><li>Alphabet mega bundle</li></ul>
@@ -1946,7 +2028,7 @@
           </article>
           <article class="card product-card">
             <div>
-              <img class="product-thumb" src="assets/alphabets/STEMQuest_A.png" alt="STEMQuest Letter A worksheet preview">
+              <img class="product-thumb" src="assets/alphabets/English/A/STEMQuest_A.png" alt="STEMQuest Letter A worksheet preview">
               <h3>STEMQuest™</h3>
               <p>Hands-on STEM activities that invite kids to test, build, ask, and discover.</p>
               <ul><li>STEM activities for kids</li><li>Printable experiments</li><li>Problem-solving pages</li></ul>
@@ -1954,7 +2036,7 @@
           </article>
           <article class="card product-card">
             <div>
-              <img class="product-thumb" src="assets/alphabets/EveryMind_A.png" alt="Every Mind Colors Letter A worksheet preview">
+              <img class="product-thumb" src="assets/alphabets/English/A/EveryMind_A.png" alt="Every Mind Colors Letter A worksheet preview">
               <h3>Every Mind Colors™</h3>
               <p>Inclusive learning and cognitive wellness experiences for kids, teens, and adults.</p>
               <ul><li>Inclusive activities</li><li>Brain fitness pages</li><li>Gentle wellness routines</li></ul>
@@ -1962,7 +2044,7 @@
           </article>
           <article class="card product-card">
             <div>
-              <img class="product-thumb" src="assets/alphabets/CareerQuest_A.png" alt="CareerQuest Kids Letter A worksheet preview">
+              <img class="product-thumb" src="assets/alphabets/English/A/CareerQuest_A.png" alt="CareerQuest Kids Letter A worksheet preview">
               <h3>CareerQuest Kids™</h3>
               <p>Career exploration for kids through playful prompts, role cards, and projects.</p>
               <ul><li>Career exploration</li><li>Community helper pages</li><li>Future-ready prompts</li></ul>
@@ -1970,7 +2052,7 @@
           </article>
           <article class="card product-card">
             <div>
-              <img class="product-thumb" src="assets/alphabets/Preschool_A.png" alt="Preschool Learning Letter A worksheet preview">
+              <img class="product-thumb" src="assets/alphabets/English/A/Preschool_A.png" alt="Preschool Learning Letter A worksheet preview">
               <h3>Preschool Learning™</h3>
               <p>Early literacy, numeracy, fine motor practice, and joyful readiness work.</p>
               <ul><li>Early learning packs</li><li>Fine motor practice</li><li>Print-and-go pages</li></ul>
@@ -1978,7 +2060,7 @@
           </article>
           <article class="card product-card">
             <div>
-              <img class="product-thumb" src="assets/alphabets/Homeschool_A.png" alt="Homeschool Resources Letter A worksheet preview">
+              <img class="product-thumb" src="assets/alphabets/English/A/Homeschool_A.png" alt="Homeschool Resources Letter A worksheet preview">
               <h3>Homeschool Resources™</h3>
               <p>Simple, organized tools for families building flexible learning rhythms.</p>
               <ul><li>Homeschool printables</li><li>Planning pages</li><li>Weekly learning kits</li></ul>
